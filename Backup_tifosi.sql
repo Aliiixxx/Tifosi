@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 19 déc. 2023 à 17:42
+-- Généré le : ven. 22 déc. 2023 à 15:18
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -17,9 +17,17 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
 -- Base de données : `tifosi`
---
+
+CREATE DATABASE IF NOT EXISTS `tifosi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `tifosi`;
+
+
+-- Création de l'utilisateur "tifosi" avec le mot de passe "password" et tous les droits
+
+CREATE USER 'tifosi'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON `tifosi`.* TO 'tifosi'@'localhost';
+
 
 -- --------------------------------------------------------
 
