@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil des Emprunteurs</title>
+</head>
+<body>
+    <h1>Bienvenue dans l'interface des Emprunteurs</h1>
+
+    <p>Ceci est la page d'accueil réservée aux emprunteurs.</p>
+
+    <!-- Tableau de médias disponibles -->
+    <h2>Médias disponibles :</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du Média</th>
+                <th>Type de Média</th>
+                <th>Emprunter</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for media in medias_disponibles %}
+            <tr>
+                <td>{{ media.nom }}</td>
+                <td>{{ media.type }}</td>
+                <td><a href="{% url 'emprunter_media' %}?media_id={{ media.id }}">Emprunter</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Liens vers d'autres pages -->
+    <a href="{% url 'rendre_media' %}">Rendre un média</a>
+</body>
+</html>
